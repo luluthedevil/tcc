@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './src/screens/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,7 +13,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen component={Main} name="Main" options={{headerShown: false}} />
-        <Stack.Screen component={Home} name="Home"/>
+        <Stack.Screen component={HomeScreen} name="Home" options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -46,14 +47,14 @@ const Main = ({ navigation }) => {
   );
 }
 
-const Home = () => {
-  return(
-    <SafeAreaView style={{flex: 1, justifyContent:'center', alignItems:'center'}}>
-      <View >
-        <Text>Home page</Text>
-      </View>
-    </SafeAreaView>
-  );
-}
+// const Home = () => {
+//   return(
+//     <SafeAreaView style={{flex: 1, justifyContent:'center', alignItems:'center'}}>
+//       <View >
+//         <Text>Home page</Text>
+//       </View>
+//     </SafeAreaView>
+//   );
+// }
 
 export default App;
