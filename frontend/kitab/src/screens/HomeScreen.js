@@ -36,7 +36,7 @@ export default function HomeScreen({navigation}) {
                     <Text style={{fontSize: 20, fontFamily: 'RobotoMedium'}}>
                         Olá Luciana
                     </Text>
-                    <TouchableOpacity onPress={() => {navigation.goBack()}}>
+                    <TouchableOpacity onPress={() => {navigation.openDrawer()}}>
                         <ImageBackground source={require('../../assets/cat.png')} style={{width: 55, height: 55}} imageStyle={{borderRadius:40}} />
                     </TouchableOpacity>
                 </View>
