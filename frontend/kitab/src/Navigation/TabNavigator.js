@@ -25,6 +25,9 @@ const HomeStack = () => {
           <Stack.Screen component={BookDetailsScreen} name="BookDetails" 
             options={({route}) => ({
                 title: route.params?.title,
+                photo: route.params?.photo,
+                author: route.params?.author,
+                isRead: route.params?.isRead,
             })}
           />
       </Stack.Navigator>

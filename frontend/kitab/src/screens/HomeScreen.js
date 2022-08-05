@@ -70,14 +70,14 @@ export default function HomeScreen({navigation}) {
                     <ListItem key={item.id} photo={item.poster}
                         title={item.title} author={item.author}
                         isRead={item.isRead}
-                        onPress={() => navigation.navigate('BookDetails', {id: item.id, title: item.title})}
+                        onPress={() => navigation.navigate('BookDetails', {id: item.id, title: item.title, photo: item.poster, author: item.author, isRead: item.isRead})}
                     />
                 ))}
                 {booksTab == 2 && geekBooks.map(item => (
                     <ListItem key={item.id} photo={item.poster}
                         title={item.title} author={item.author}
                         isRead={item.isRead} 
-                        onPress={() => navigation.navigate('BookDetails', {id: item.id, title: item.title})}
+                        onPress={() => navigation.navigate('BookDetails', {id: item.id, title: item.title, photo: item.poster, author: item.author, isRead: item.isRead})}
                     />
                 ))}
             </ScrollView>
