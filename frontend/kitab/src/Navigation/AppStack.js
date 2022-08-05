@@ -1,5 +1,4 @@
 import React from 'react';
-import HomeScreen from '../screens/HomeScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import ProfileScreen from '../screens/ProfileScreen';
 import LibraryScreen from '../screens/LibraryScreen';
@@ -8,6 +7,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 import CustomDrawer from '../components/CustomDrawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useFonts } from 'expo-font';
+import TabNavigator from './TabNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -29,7 +29,7 @@ const AppStack = () => {
       drawerLabelStyle: {
       marginLeft: -20, fontFamily: 'RobotoMedium', fontSize: 16
     }}}>
-        <Drawer.Screen component={HomeScreen} name="Home" options={{
+        <Drawer.Screen component={TabNavigator} name="Home" options={{
           drawerIcon: ({color}) => (
             <Ionicons name='home-outline' size={25} color={color} />
           )
