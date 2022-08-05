@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 import { windowWidth } from '../utils/Dimensions';
 
-export default function ListItem({photo, author, title, isRead}) {
+export default function ListItem({photo, author, title, isRead, onPress}) {
 
     const [loaded] = useFonts ({
         RobotoMedium: require('../../assets/fonts/Roboto/Roboto-Medium.ttf'),
@@ -68,6 +68,7 @@ export default function ListItem({photo, author, title, isRead}) {
             </View>
         </View>
         <TouchableOpacity
+        onPress={onPress}
             style={{
                 backgroundColor:'#1E90FF', padding:10,
                 width:100, borderRadius:10
