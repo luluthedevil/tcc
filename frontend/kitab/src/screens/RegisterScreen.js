@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text, View, Image, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, Image, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import InputField from '../components/InputField';
+import CustomButtom from '../components/CustomButtom';
 
 export default function RegisterScreen({navigation}) {
   const [loaded] = useFonts ({
@@ -17,60 +19,18 @@ export default function RegisterScreen({navigation}) {
     <SafeAreaView style={{
         flex:1, justifyContent: 'center'
     }}>
-      <View style={{
+      <ScrollView showsVerticalScrollIndicator={false} style={{
         paddingHorizontal:25
       }}>
         <View style={{alignItems: 'center'}}>
-          <Image style={{width: 400, height: 300, marginBottom: 20}} source={require('../../assets/read5.jpg')} />
+          <Image style={{width: 400, height: 300, marginBottom: 20, marginTop: 40}} source={require('../../assets/read5.jpg')} />
         </View>
           <Text style={{
             fontFamily: 'RobotoMedium', fontSize: 28,
             fontWeight: '500', color: '#333',  marginBottom: 20
           }}>Regristre-se</Text>
 
-          <View style={{
-            flexDirection: 'row', borderBottomColor: '#ccc',
-            borderBottomWidth: 1, paddingBottom: 8, marginBottom:20
-          }}>
-            <MaterialIcons name='alternate-email' size={25} 
-              color='#666' style={{marginRight:5}}
-            />
-            <TextInput placeholder='Email' style={{
-              flex:1, paddingVertical:0
-            }} keyboardType='email-address' />
-          </View>
-
-          <View style={{
-            flexDirection: 'row', borderBottomColor: '#ccc',
-            borderBottomWidth: 1, paddingBottom: 8, marginBottom:20
-          }}>
-            <Ionicons name='ios-lock-closed-outline' size={25} 
-              color='#666' style={{marginRight:5}}
-            />
-            <TextInput placeholder='Senha' style={{
-              flex:1, paddingVertical:0
-            }} secureTextEntry={true} />
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={{
-                color:'#0aada8', fontWeight:'700'
-              }}>Esqueceu?</Text>
-            </TouchableOpacity>
-          </View>
-          <TouchableOpacity onPress={() => {}} style={{
-            backgroundColor:'#0aada8', padding:15, borderRadius:10,
-            marginBottom:20
-          }}>
-            <Text style={{
-              textAlign:'center', fontWeight:'700', fontSize: 25,
-              color:'#fff'
-            }}>Entrar</Text>
-          </TouchableOpacity>
-          <Text style={{
-            textAlign:'center', color:'#666', marginBottom: 20,
-            fontSize: 20
-          }}>Ou então, entre com...</Text>
-
-          <View style={{ 
+            <View style={{ 
             flexDirection: 'row', justifyContent:'space-around',
             marginBottom:20
           }}>
@@ -92,6 +52,33 @@ export default function RegisterScreen({navigation}) {
               }} />
             </TouchableOpacity>
           </View>
+          <Text style={{
+            textAlign:'center', color:'#666', marginBottom: 20,
+            fontSize: 20
+          }}>Ou então, registre-se...</Text>
+
+            <InputField label={'Nome completo'} icon={<Ionicons name='person-outline' size={25} 
+              color='#666' style={{marginRight:5}}
+            />} />
+
+            <InputField label={'Email'} icon={<MaterialIcons name='alternate-email' size={25} 
+              color='#666' style={{marginRight:5}}
+            />} keyboardType='email-addres' />
+
+            <InputField label={'Senha'} icon={<Ionicons name='ios-lock-closed-outline' size={25} 
+              color='#666' style={{marginRight:5}}
+            />}inputType='password' />
+
+            <InputField label={'Confirmar senha'} icon={<Ionicons name='ios-lock-closed-outline' size={25} 
+              color='#666' style={{marginRight:5}}
+            />}inputType='password' />
+
+            <InputField label={'Data de nascimento'} icon={<Ionicons name='ios-lock-closed-outline' size={25} 
+              color='#666' style={{marginRight:5}}
+            />}  />
+
+            <CustomButtom label={'Registre-se'} onPres={() => {}} />
+
           <View style={{
             flexDirection:'row', justifyContent:'center',
             marginBottom:20
@@ -103,7 +90,7 @@ export default function RegisterScreen({navigation}) {
           }}> Login</Text>
           </TouchableOpacity>
           </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }

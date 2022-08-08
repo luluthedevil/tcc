@@ -3,6 +3,8 @@ import { Text, View, Image, SafeAreaView, TextInput, TouchableOpacity } from 're
 import { useFonts } from 'expo-font';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import InputField from '../components/InputField';
+import CustomButtom from '../components/CustomButtom';
 
 export default function LoginScreen({navigation}) {
   const [loaded] = useFonts ({
@@ -28,43 +30,18 @@ export default function LoginScreen({navigation}) {
             fontWeight: '500', color: '#333',  marginBottom: 20
           }}>Login</Text>
 
-          <View style={{
-            flexDirection: 'row', borderBottomColor: '#ccc',
-            borderBottomWidth: 1, paddingBottom: 8, marginBottom:20
-          }}>
-            <MaterialIcons name='alternate-email' size={25} 
+            <InputField label={'Email'} icon={<MaterialIcons name='alternate-email' size={25} 
               color='#666' style={{marginRight:5}}
-            />
-            <TextInput placeholder='Email' style={{
-              flex:1, paddingVertical:0
-            }} keyboardType='email-address' />
-          </View>
+            />} keyboardType='email-addres' />
 
-          <View style={{
-            flexDirection: 'row', borderBottomColor: '#ccc',
-            borderBottomWidth: 1, paddingBottom: 8, marginBottom:20
-          }}>
-            <Ionicons name='ios-lock-closed-outline' size={25} 
+            <InputField label={'Senha'} icon={<Ionicons name='ios-lock-closed-outline' size={25} 
               color='#666' style={{marginRight:5}}
+            />}inputType='password' fieldButtonLabel={'Esqueceu?'} 
+              fieldButtonFunction={() => {}}
             />
-            <TextInput placeholder='Senha' style={{
-              flex:1, paddingVertical:0
-            }} secureTextEntry={true} />
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={{
-                color:'#0aada8', fontWeight:'700'
-              }}>Esqueceu?</Text>
-            </TouchableOpacity>
-          </View>
-          <TouchableOpacity onPress={() => {}} style={{
-            backgroundColor:'#0aada8', padding:15, borderRadius:10,
-            marginBottom:20
-          }}>
-            <Text style={{
-              textAlign:'center', fontWeight:'700', fontSize: 25,
-              color:'#fff'
-            }}>Entrar</Text>
-          </TouchableOpacity>
+
+          <CustomButtom label={'Entrar'} onPres={() => {}} />
+
           <Text style={{
             textAlign:'center', color:'#666', marginBottom: 20,
             fontSize: 20
