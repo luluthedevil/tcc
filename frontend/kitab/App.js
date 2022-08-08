@@ -5,8 +5,8 @@ import AuthStack from './src/Navigation/AuthStack';
 const App = () => {
   return(
     <NavigationContainer>
-      <AppStack />
-      {/* <AuthStack /> */}
+      {/* <AppStack /> */}
+      <AuthStack />
     </NavigationContainer>
   );
 }

@@ -21,6 +21,7 @@ export default function ChallengesScreen() {
         <View>
           <View style={{
             padding: 8, borderRadius: 15, marginRight: 10,
+            borderBottomColor: '#222', borderBottomWidth: 2
           }}>
           <Text
             style={{
@@ -74,6 +75,7 @@ export default function ChallengesScreen() {
         <View>
           <View style={{
             padding: 8, borderRadius: 15, marginRight: 10,
+            borderBottomColor: '#222', borderBottomWidth: 2
           }}>
           <Text
             style={{

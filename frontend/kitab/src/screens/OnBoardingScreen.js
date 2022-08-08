@@ -23,7 +23,7 @@ export default function OnBoardingScreen({navigation}) {
                 <Text style={{fontSize:40, fontWeight:'bold', color:'#20315f', fontFamily:'RobotoBold'}}>Kitab</Text>
             </View>
             <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-                <Image style={{width: 300, height: 300, marginBottom: 30}} source={require('../../assets/bookshelf-icon.png')} />
+                <Image style={{width: 330, height: 300, marginBottom: 30}} source={require('../../assets/read3.jpg')} />
             </View>
             <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{backgroundColor:'#1E90FF', padding: 20, marginBottom:50, width: '90%', borderRadius: 8, flexDirection: 'row', justifyContent: 'space-between'}}>
                 <Text style={{fontSize:20, color: '#fff', fontFamily:'RobotoMediumItalic'}}>
