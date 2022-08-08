@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default function LoginScreen({navigation}) {
+export default function RegisterScreen({navigation}) {
   const [loaded] = useFonts ({
     RobotoMedium: require('../../assets/fonts/Roboto/Roboto-Medium.ttf'),
   });
@@ -21,12 +21,12 @@ export default function LoginScreen({navigation}) {
         paddingHorizontal:25
       }}>
         <View style={{alignItems: 'center'}}>
-          <Image style={{width: 400, height: 300, marginBottom: 20}} source={require('../../assets/read6.jpg')} />
+          <Image style={{width: 400, height: 300, marginBottom: 20}} source={require('../../assets/read5.jpg')} />
         </View>
           <Text style={{
             fontFamily: 'RobotoMedium', fontSize: 28,
             fontWeight: '500', color: '#333',  marginBottom: 20
-          }}>Login</Text>
+          }}>Regristre-se</Text>
 
           <View style={{
             flexDirection: 'row', borderBottomColor: '#ccc',
@@ -96,11 +96,11 @@ export default function LoginScreen({navigation}) {
             flexDirection:'row', justifyContent:'center',
             marginBottom:20
           }}>
-          <Text>Novo por aqui? </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+          <Text>Já possui cadastro? </Text>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text style={{
             color:'#0aada8', fontWeight:'700'
-          }}> Registre-se</Text>
+          }}> Login</Text>
           </TouchableOpacity>
           </View>
       </View>
